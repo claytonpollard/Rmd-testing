@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Test</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Test</h1>
+
+</div>
+
+
+<div id="boxes" class="section level2">
+<h2>Boxes</h2>
+<div id="an-example-of-a-coloured-box" class="section level3">
+<h3>An example of a coloured box</h3>
+<p>This could be used for indicating a syllabus dot point, an example, a reminder, etc.</p>
+<div class="syllabus">
+<p><strong>Quadratic Formula</strong></p>
+<p><span class="math display">\[\begin{aligned}
+ax^2+bx+c&amp;=0\\
+x^2+\frac{b}{a}x+\frac{c}{a}&amp;=0\\
+x^2+\frac{b}{a}x&amp;=-\frac{c}{a}\\
+x^2+\frac{b}{a}x+\left(\frac{b}{2a}\right)^2&amp;=\left(\frac{b}{2a}\right)^2-\frac{c}{a}\\
+\left(x+\frac{b}{2a}\right)^2&amp;=\frac{b^2-4ac}{4a^2}\\
+x+\frac{b}{2a}&amp;=\pm\sqrt{\frac{b^2-4ac}{4a^2}}\\
+x&amp;=\frac{-b}{2a}\pm\frac{\sqrt{b^2-4ac}}{2a}\\
+x&amp;=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{aligned}\]</span></p>
+</div>
+</div>
+</div>
+<div id="embed-geogebra" class="section level2 tabset tabset-fade tabset-pills">
+<h2>Embed geogebra</h2>
+<div id="example-1" class="section level3">
+<h3>Example 1</h3>
+<p>Just the animation going with not much opportunity for input.</p>
+<div id="ggbApplet">
+
+</div>
+</div>
+<div id="example-2" class="section level3">
+<h3>Example 2</h3>
+<p>With the menu included so you can add in more equations, download, etc.</p>
+<div id="ggbApplet2">
+
+</div>
+<script>
+var parameters = {
+"id": "ggbApplet",
+"width":1000,
+"height":600,
+"showMenuBar":false,
+"showAlgebraInput":false,
+"showToolBar":false,
+"customToolBar":"0 77 73 62 | 1 501 67 , 5 19 , 72 75 76 | 2 15 45 , 18 65 , 7 37 | 4 3 8 9 , 13 44 , 58 , 47 | 16 51 64 , 70 | 10 34 53 11 , 24  20 22 , 21 23 | 55 56 57 , 12 | 36 46 , 38 49  50 , 71  14  68 | 30 29 54 32 31 33 | 25 17 26 60 52 61 | 40 41 42 , 27 28 35 , 6",
+"showToolBarHelp":false,
+"showResetIcon":false,
+"enableLabelDrags":false,
+"enableShiftDragZoom":true,
+"enableRightClick":false,
+"errorDialogsActive":false,
+"useBrowserForJS":false,
+"allowStyleBar":false,
+"preventFocus":false,
+"showZoomButtons":true,
+"capturingThreshold":3,
+// add code here to run when the applet starts
+"appletOnLoad":function(api){ /* api.evalCommand('Segment((1,2),(3,4))');*/ },
+"showFullscreenButton":true,
+"scale":1,
+"disableAutoScale":false,
+"allowUpscale":false,
+"clickToLoad":false,
+"appName":"graphing",
+"showSuggestionButtons":false,
+"buttonRounding":0.7,
+"buttonShadows":false,
+"language":"en",
+// use this instead of ggbBase64 to load a material from geogebra.org
+// "material_id":"RHYH3UQ8",
+// use this instead of ggbBase64 to load a .ggb file
+// "filename":"myfile.ggb",
+"ggbBase64":"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",
+};
+
+var parameters2 = {
+"id": "ggbApplet2",
+"width":1153,
+"height":647,
+"showMenuBar":true,
+"showAlgebraInput":true,
+"showToolBar":true,
+"customToolBar":"0 77 73 62 | 1 501 67 , 5 19 , 72 75 76 | 2 15 45 , 18 65 , 7 37 | 4 3 8 9 , 13 44 , 58 , 47 | 16 51 64 , 70 | 10 34 53 11 , 24  20 22 , 21 23 | 55 56 57 , 12 | 36 46 , 38 49  50 , 71  14  68 | 30 29 54 32 31 33 | 25 17 26 60 52 61 | 40 41 42 , 27 28 35 , 6",
+"showToolBarHelp":true,
+"showResetIcon":false,
+"enableLabelDrags":false,
+"enableShiftDragZoom":true,
+"enableRightClick":false,
+"errorDialogsActive":false,
+"useBrowserForJS":false,
+"allowStyleBar":false,
+"preventFocus":false,
+"showZoomButtons":true,
+"capturingThreshold":3,
+// add code here to run when the applet starts
+"appletOnLoad":function(api){ /* api.evalCommand('Segment((1,2),(3,4))');*/ },
+"showFullscreenButton":true,
+"scale":1,
+"disableAutoScale":false,
+"allowUpscale":false,
+"clickToLoad":false,
+"appName":"graphing",
+"showSuggestionButtons":true,
+"buttonRounding":0.7,
+"buttonShadows":false,
+"language":"en",
+// use this instead of ggbBase64 to load a material from geogebra.org
+// "material_id":"RHYH3UQ8",
+// use this instead of ggbBase64 to load a .ggb file
+// "filename":"myfile.ggb",
+"ggbBase64":"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",
+};
+
+// is3D=is 3D applet using 3D view, AV=Algebra View, SV=Spreadsheet View, CV=CAS View, EV2=Graphics View 2, CP=Construction Protocol, PC=Probability Calculator DA=Data Analysis, FI=Function Inspector, macro=Macros
+var views = {'is3D': 0,'AV': 1,'SV': 0,'CV': 0,'EV2': 0,'CP': 0,'PC': 0,'DA': 0,'FI': 0,'macro': 0};
+var applet = new GGBApplet(parameters, '5.0', views);
+var applet2 = new GGBApplet(parameters2, '5.0', views);
+window.onload = function() {
+    applet.inject('ggbApplet');
+    applet2.inject('ggbApplet2');};
+applet.setPreviewImage('data:image/gif;base64,R0lGODlhAQABAAAAADs=','https://www.geogebra.org/images/GeoGebra_loading.png','https://www.geogebra.org/images/applet_play.png');
+</script>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

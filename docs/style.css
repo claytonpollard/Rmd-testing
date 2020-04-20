@@ -1,0 +1,116 @@
+.syllabus {
+  border: 1px rgb(221, 72, 30);
+  border-left: 5px rgb(221, 72, 30);
+  border-style: hidden;
+  border-left-style: solid;
+  border-radius: 6px;
+  padding: 4px;
+  padding-left: 8px;
+  margin: 10px;
+  background: gba(221, 72, 30);
+}
+
+.definition {
+  border: 1px rgb(221, 72, 30);
+  border-left: 5px rgb(221, 72, 30);
+  border-style: hidden;
+  border-left-style: solid;
+  border-radius: 6px;
+  padding: 4px;
+  padding-left: 8px;
+  margin: 10px;
+  background: rgba(221, 72, 30, 0.1);
+}
+
+.rule {
+  border: 1px rgb(221, 72, 30);
+  border-left: 5px rgb(221, 72, 30);
+  border-style: hidden;
+  border-left-style: solid;
+  border-radius: 6px;
+  padding: 4px;
+  padding-left: 8px;
+  margin: 10px;
+  background: rgba(221, 72, 30, 0.1);
+}
+
+.important {
+  border: 1px rgb(221, 72, 30);
+  border-left: 5px rgb(221, 72, 30);
+  border-style: hidden;
+  border-left-style: solid;
+  border-radius: 6px;
+  padding: 4px;
+  padding-left: 8px;
+  margin: 10px;
+  background: rgba(221, 72, 30, 0.1);
+}
+
+.proof {
+  border: 1px rgb(221, 72, 30);
+  border-left: 5px rgb(221, 72, 30);
+  border-style: hidden;
+  border-left-style: solid;
+  border-radius: 6px;
+  padding: 4px;
+  padding-left: 8px;
+  margin: 10px;
+  background: rgba(221, 72, 30, 0.1);
+}
+
+.extension {
+  border: 1px rgb(221, 72, 30);
+  border-left: 5px rgb(221, 72, 30);
+  border-style: hidden;
+  border-left-style: solid;
+  border-radius: 6px;
+  padding: 4px;
+  padding-left: 8px;
+  margin: 10px;
+  background: rgba(221, 72, 30, 0.1);
+}
+
+.note {
+  border: 1px rgb(221, 72, 30);
+  border-left: 5px rgb(221, 72, 30);
+  border-style: hidden;
+  border-left-style: solid;
+  border-radius: 6px;
+  padding: 4px;
+  padding-left: 8px;
+  margin: 10px;
+  background: rgba(221, 72, 30, 0.1);
+}
+
+.example {
+  border: 1px rgb(221, 72, 30);
+  border-left: 5px rgb(221, 72, 30);
+  border-style: hidden;
+  border-left-style: solid;
+  border-radius: 6px;
+  padding: 4px;
+  padding-left: 8px;
+  margin: 10px;
+  background: rgba(221, 72, 30, 0.1);
+}
+
+.practice {
+  border: 1px rgb(221, 72, 30);
+  border-left: 5px rgb(221, 72, 30);
+  border-style: hidden;
+  border-left-style: solid;
+  border-radius: 6px;
+  padding: 4px;
+  padding-left: 8px;
+  margin: 10px;
+  background: rgba(221, 72, 30, 0.1);
+}
+
+
+#nextsteps {
+   color: blue;
+}
+
+.emphasized {
+   font-size: 1.2em;
+}
