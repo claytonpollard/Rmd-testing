@@ -6,7 +6,8 @@ output:
     toc_float: true
 ---
 
-# Lesson 1
+# Lesson 1 [![](pres.png)](example_pres.html)
+
 
 ## Content
 
@@ -47,7 +48,7 @@ For example, consider the equation $\enspace4x+12=32$:
     <td>$\enspace x=1$</td>
     <td>the LHS is</td>
     <td style="text-align:right">$4\times1+12=$</td>
-    <td style="text-align:right">$1+12=13\qquad$</td>
+    <td style="text-align:right">$4+12=16\qquad$</td>
   </tr>
   <tr>
     <td style="text-align:right">If</td>
