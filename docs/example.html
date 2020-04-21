@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Equations</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: .5rem;
+  }
+  pre:not([class]) {
+    background-color: white;
+  }
+  pre code {
+    background-color: transparent;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* TODO: remove this padding CSS when we drop BS3 */
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!--
+  Note that .tabset-dropdown was initially implemented using Glyphicons, which were dropped
+  in BS4. The idea behind the "equivalent" BS4 CSS derives from how carets are implemented
+  https://github.com/twbs/bootstrap/blob/099860/scss/mixins/_caret.scss#L1
+-->
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active-dropdown-tab:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active-dropdown-tab:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active-dropdown-tab {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-sm-12 col-md-8 col-lg-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="example.html">Example</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Equations</h1>
+
+</div>
+
+
+<div id="lesson-1" class="section level1">
+<h1>Lesson 1</h1>
+<div id="content" class="section level2">
+<h2>Content</h2>
+<p><a href="https://www.haesemathematics.com/books/mathematics-for-australia-7"><em>Copied from the Haese Year 7 textbook</em></a></p>
+<div class="syllabus">
+<p><strong>Learning Outcome</strong></p>
+<p>distinguish between algebraic expressions where pronumerals are used as variables, and equations where pronumerals are used as unknowns</p>
+</div>
+<div class="definition">
+<p>An <strong>equation</strong> is a mathematical sentenace which indicates that two <em>expressions</em> have the same value. An equation always contains an <em>equals</em> sign <span class="math inline">\((=)\)</span>.</p>
+</div>
+<p>A simple equation may be a true numerical statement like: <span class="math display">\[\underbrace{4\times7}_{\textbf{LHS}}\enspace=\enspace\underbrace{17+11}_{\textbf{RHS}}\]</span> Notice that an equation has a <strong>left hand side (LHS)</strong> and a <strong>right hand side (RHS)</strong> and these are separated by the <strong>equals sign</strong>.</p>
+<div class="definition">
+<p>An <strong>algebraic equation</strong> has an <strong>unknown</strong> or <strong>variable</strong> in it.</p>
+</div>
+<p>For example, <span class="math inline">\(\enspace4x+12=32\enspace\)</span> contains the <em>variable</em> <span class="math inline">\(x\)</span>.</p>
+<div class="definition">
+<p>When we <strong>solve</strong> an equation we find the value of the variable which makes the equation true. This value is called the <strong>solution</strong> of the equation.</p>
+</div>
+<p>If we were to replace <span class="math inline">\(x\)</span> by a variety of numbers, most of them would make the equation false.</p>
+<p>For example, consider the equation <span class="math inline">\(\enspace4x+12=32\)</span>:</p>
+<table>
+<tr>
+<td style="text-align:right">
+If
+</td>
+<td>
+<span class="math inline">\(\enspace x=1\)</span>
+</td>
+<td>
+the LHS is
+</td>
+<td style="text-align:right">
+<span class="math inline">\(4\times1+12=\)</span>
+</td>
+<td style="text-align:right">
+<span class="math inline">\(1+12=13\qquad\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right">
+If
+</td>
+<td>
+<span class="math inline">\(\enspace x=10\enspace\)</span>
+</td>
+<td>
+the LHS is
+</td>
+<td style="text-align:right">
+<span class="math inline">\(4\times10+12=\)</span>
+</td>
+<td style="text-align:right">
+<span class="math inline">\(40+12=52\qquad\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right">
+If
+</td>
+<td>
+<span class="math inline">\(\enspace x=5\)</span>
+</td>
+<td>
+the LHS is
+</td>
+<td style="text-align:right">
+<span class="math inline">\(4\times5+12=\)</span>
+</td>
+<td style="text-align:right">
+<span class="math inline">\(20+12=32\qquad\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right">
+So, if
+</td>
+<td>
+<span class="math inline">\(\enspace x=5\)</span>
+</td>
+<td colspan="3">
+then the LHS = RHS, and the equation is true.
+</td>
+</tr>
+<tr>
+<td style="text-align:right">
+We say
+</td>
+<td>
+<span class="math inline">\(\enspace x=5\)</span>
+</td>
+<td colspan="3">
+is the <strong>solution</strong> of the equation <span class="math inline">\(\enspace4x+12=32\)</span>.
+</td>
+</tr>
+</table>
+</div>
+<div id="examples" class="section level2 tabset tabset-fade tabset-pills">
+<h2>Examples</h2>
+<div id="example-1" class="section level3 tabset tabset-fade">
+<h3>Example 1</h3>
+<div id="example" class="section level4">
+<h4>Example</h4>
+<p>What number can replace <span class="math inline">\(\square\)</span> to make the equation true?</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\quad3+\square=10\)</span></li>
+<li><span class="math inline">\(\quad3\times\square=18\)</span></li>
+<li><span class="math inline">\(\quad20\div\square=4\)</span></li>
+<li><span class="math inline">\(\quad\square-8=4\)</span></li>
+</ol>
+</div>
+<div id="solution" class="section level4">
+<h4>Solution</h4>
+<p>What number can replace <span class="math inline">\(\square\)</span> to make the equation true?</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\begin{aligned}[t]3+\square&amp;=10\\3+\color{rgb(221, 72, 30)}{7}&amp;=10\\\text{so}\quad\square&amp;=7\end{aligned}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{aligned}[t]3\times\square&amp;=18\\3\times\color{rgb(221, 72, 30)}{6}&amp;=18\\\text{so}\quad\square&amp;=6\end{aligned}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{aligned}[t]20\div\square&amp;=4\\20\div\color{rgb(221, 72, 30)}{5}&amp;=4\\\text{so}\quad\square&amp;=5\end{aligned}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{aligned}[t]\square-8&amp;=4\\\color{rgb(221, 72, 30)}{12}-8&amp;=4\\\text{so}\quad\square&amp;=12\end{aligned}\)</span></p></li>
+</ol>
+</div>
+</div>
+<div id="example-2" class="section level3 tabset tabset-fade">
+<h3>Example 2</h3>
+<div id="example-3" class="section level4">
+<h4>Example</h4>
+<p>What number can replace <span class="math inline">\(\square\)</span> to make the equation true?</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\quad3+\square=10\)</span></li>
+<li><span class="math inline">\(\quad3\times\square=18\)</span></li>
+<li><span class="math inline">\(\quad20\div\square=4\)</span></li>
+<li><span class="math inline">\(\quad\square-8=4\)</span></li>
+</ol>
+</div>
+<div id="solution-1" class="section level4">
+<h4>Solution</h4>
+<p>What number can replace <span class="math inline">\(\square\)</span> to make the equation true?</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\begin{aligned}[t]3+\square&amp;=10\\3+\color{rgb(221, 72, 30)}{7}&amp;=10\\\text{so}\quad\square&amp;=7\end{aligned}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{aligned}[t]3\times\square&amp;=18\\3\times\color{rgb(221, 72, 30)}{6}&amp;=18\\\text{so}\quad\square&amp;=6\end{aligned}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{aligned}[t]20\div\square&amp;=4\\20\div\color{rgb(221, 72, 30)}{5}&amp;=4\\\text{so}\quad\square&amp;=5\end{aligned}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{aligned}[t]\square-8&amp;=4\\\color{rgb(221, 72, 30)}{12}-8&amp;=4\\\text{so}\quad\square&amp;=12\end{aligned}\)</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="practice-questions" class="section level2 tabset tabset-fade tabset-pills">
+<h2>Practice questions</h2>
+<div id="level-1" class="section level3">
+<h3>Level 1</h3>
+<ol style="list-style-type: decimal">
+<li>State whether each of the following is an equation or an expression:
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\enspace3(x+2)\)</span></li>
+<li><span class="math inline">\(\enspace3(x+2)=6\)</span></li>
+<li><span class="math inline">\(\enspace5-3x-2\)</span></li>
+<li><span class="math inline">\(\enspace3x+2=6\)</span></li>
+<li><span class="math inline">\(\enspace-x+4=11\)</span></li>
+<li><span class="math inline">\(\enspace-x+(4-11)-2x\)</span></li>
+</ol></li>
+<li></li>
+<li></li>
+</ol>
+</div>
+<div id="level-2" class="section level3">
+<h3>Level 2</h3>
+<ol style="list-style-type: decimal">
+<li>State whether each of the following is an equation or an expression:
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\enspace3(x+2)\)</span></li>
+<li><span class="math inline">\(\enspace3(x+2)=6\)</span></li>
+<li><span class="math inline">\(\enspace5-3x-2\)</span></li>
+<li><span class="math inline">\(\enspace3x+2=6\)</span></li>
+<li><span class="math inline">\(\enspace-x+4=11\)</span></li>
+<li><span class="math inline">\(\enspace-x+(4-11)-2x\)</span></li>
+</ol></li>
+<li></li>
+<li></li>
+</ol>
+</div>
+<div id="level-3" class="section level3">
+<h3>Level 3</h3>
+<ol style="list-style-type: decimal">
+<li>State whether each of the following is an equation or an expression:
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\enspace3(x+2)\)</span></li>
+<li><span class="math inline">\(\enspace3(x+2)=6\)</span></li>
+<li><span class="math inline">\(\enspace5-3x-2\)</span></li>
+<li><span class="math inline">\(\enspace3x+2=6\)</span></li>
+<li><span class="math inline">\(\enspace-x+4=11\)</span></li>
+<li><span class="math inline">\(\enspace-x+(4-11)-2x\)</span></li>
+</ol></li>
+<li></li>
+<li></li>
+</ol>
+</div>
+<div id="answers" class="section level3">
+<h3>Answers</h3>
+<div id="level-1-1" class="section level4">
+<h4>Level 1</h4>
+<ol style="list-style-type: decimal">
+<li>State whether each of the following is an equation or an expression:
+<ol style="list-style-type: lower-alpha">
+<li>expression</li>
+<li>equation</li>
+<li>expression</li>
+<li>equation</li>
+<li>equation</li>
+<li>solution</li>
+</ol></li>
+<li></li>
+<li></li>
+</ol>
+</div>
+<div id="level-2-1" class="section level4">
+<h4>Level 2</h4>
+</div>
+<div id="level-3-1" class="section level4">
+<h4>Level 3</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="lesson-2" class="section level1">
+<h1>Lesson 2</h1>
+<div class="syllabus">
+<p><strong>Syllabus</strong></p>
+<p>Syllabus here</p>
+</div>
+<div class="definition">
+<p><strong>Definition</strong></p>
+<p>Definition here</p>
+</div>
+<div class="rule">
+<p><strong>Rule</strong></p>
+<p>Rule here</p>
+</div>
+<div class="important">
+<p><strong>Important</strong></p>
+<p>Important here</p>
+</div>
+<div class="proof">
+<p><strong>Proof</strong></p>
+<p>Proof here</p>
+</div>
+<div class="extension">
+<p><strong>Extension</strong></p>
+<p>Extension here</p>
+</div>
+<div class="note">
+<p><strong>Note</strong></p>
+<p>Note here</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+    $(this).siblings().removeClass("active-dropdown-tab");
+    $(this).addClass("active-dropdown-tab");
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

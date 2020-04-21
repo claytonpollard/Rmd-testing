@@ -1,4 +1,9 @@
 name: "claytonpollard"
+navbar:
+  title: "Home"
+  left:
+    - text: "Example"
+      href: example.html
 output_dir: "docs"
 output:
   html_document:

@@ -1,0 +1,232 @@
+---
+title: "Equations"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Lesson 1
+
+## Content
+
+[_Copied from the Haese Year 7 textbook_](https://www.haesemathematics.com/books/mathematics-for-australia-7)
+
+:::: {.syllabus}
+**Learning Outcome**
+
+distinguish between algebraic expressions where pronumerals are used as variables, and
+equations where pronumerals are used as unknowns
+::::
+
+:::: {.definition}
+An **equation** is a mathematical sentenace which indicates that two _expressions_ have the same value. An equation always contains an _equals_ sign $(=)$.
+::::
+
+A simple equation may be a true numerical statement like:
+$$\underbrace{4\times7}_{\textbf{LHS}}\enspace=\enspace\underbrace{17+11}_{\textbf{RHS}}$$
+Notice that an equation has a **left hand side (LHS)** and a **right hand side (RHS)** and these are separated by the **equals sign**.
+
+:::: {.definition}
+An **algebraic equation** has an **unknown** or **variable** in it.
+::::
+
+For example, $\enspace4x+12=32\enspace$ contains the _variable_ $x$.
+
+:::: {.definition}
+When we **solve** an equation we find the value of the variable which makes the equation true. This value is called the **solution** of the equation.
+::::
+
+If we were to replace $x$ by a variety of numbers, most of them would make the equation false.
+
+For example, consider the equation $\enspace4x+12=32$:
+
+<table>
+  <tr>
+    <td style="text-align:right">If</td>
+    <td>$\enspace x=1$</td>
+    <td>the LHS is</td>
+    <td style="text-align:right">$4\times1+12=$</td>
+    <td style="text-align:right">$1+12=13\qquad$</td>
+  </tr>
+  <tr>
+    <td style="text-align:right">If</td>
+    <td>$\enspace x=10\enspace$</td>
+    <td>the LHS is</td>
+    <td style="text-align:right">$4\times10+12=$</td>
+    <td style="text-align:right">$40+12=52\qquad$</td>
+  </tr>
+  <tr>
+    <td style="text-align:right">If</td>
+    <td>$\enspace x=5$</td>
+    <td>the LHS is</td>
+    <td style="text-align:right">$4\times5+12=$</td>
+    <td style="text-align:right">$20+12=32\qquad$</td>
+  </tr>
+  <tr>
+    <td style="text-align:right">So, if</td>
+    <td>$\enspace x=5$</td>
+    <td colspan="3">then the LHS = RHS, and the equation is true.</td>
+  </tr>
+  <tr>
+    <td style="text-align:right">We say</td>
+    <td>$\enspace x=5$</td>
+    <td colspan="3">is the **solution** of the equation $\enspace4x+12=32$.</td>
+  </tr>
+</table>
+
+## Examples {.tabset .tabset-fade .tabset-pills}
+
+### Example 1 {.tabset .tabset-fade}
+
+#### Example
+
+What number can replace $\square$ to make the equation true?
+
+a) $\quad3+\square=10$
+b) $\quad3\times\square=18$
+c) $\quad20\div\square=4$
+d) $\quad\square-8=4$
+
+#### Solution
+
+What number can replace $\square$ to make the equation true?
+
+a) $\begin{aligned}[t]3+\square&=10\\3+\color{rgb(221, 72, 30)}{7}&=10\\\text{so}\quad\square&=7\end{aligned}$
+
+b) $\begin{aligned}[t]3\times\square&=18\\3\times\color{rgb(221, 72, 30)}{6}&=18\\\text{so}\quad\square&=6\end{aligned}$
+
+c) $\begin{aligned}[t]20\div\square&=4\\20\div\color{rgb(221, 72, 30)}{5}&=4\\\text{so}\quad\square&=5\end{aligned}$
+
+d) $\begin{aligned}[t]\square-8&=4\\\color{rgb(221, 72, 30)}{12}-8&=4\\\text{so}\quad\square&=12\end{aligned}$
+
+### Example 2 {.tabset .tabset-fade}
+
+#### Example
+
+What number can replace $\square$ to make the equation true?
+
+a) $\quad3+\square=10$
+b) $\quad3\times\square=18$
+c) $\quad20\div\square=4$
+d) $\quad\square-8=4$
+
+#### Solution
+
+What number can replace $\square$ to make the equation true?
+
+a) $\begin{aligned}[t]3+\square&=10\\3+\color{rgb(221, 72, 30)}{7}&=10\\\text{so}\quad\square&=7\end{aligned}$
+
+b) $\begin{aligned}[t]3\times\square&=18\\3\times\color{rgb(221, 72, 30)}{6}&=18\\\text{so}\quad\square&=6\end{aligned}$
+
+c) $\begin{aligned}[t]20\div\square&=4\\20\div\color{rgb(221, 72, 30)}{5}&=4\\\text{so}\quad\square&=5\end{aligned}$
+
+d) $\begin{aligned}[t]\square-8&=4\\\color{rgb(221, 72, 30)}{12}-8&=4\\\text{so}\quad\square&=12\end{aligned}$
+
+## Practice questions {.tabset .tabset-fade .tabset-pills}
+
+### Level 1
+
+1. State whether each of the following is an equation or an expression:
+    a. $\enspace3(x+2)$
+    b. $\enspace3(x+2)=6$
+    c. $\enspace5-3x-2$
+    d. $\enspace3x+2=6$
+    e. $\enspace-x+4=11$
+    f. $\enspace-x+(4-11)-2x$
+
+2.
+
+3.
+
+### Level 2
+
+1. State whether each of the following is an equation or an expression:
+    a. $\enspace3(x+2)$
+    b. $\enspace3(x+2)=6$
+    c. $\enspace5-3x-2$
+    d. $\enspace3x+2=6$
+    e. $\enspace-x+4=11$
+    f. $\enspace-x+(4-11)-2x$
+
+2.
+
+3.
+
+### Level 3
+
+1. State whether each of the following is an equation or an expression:
+    a. $\enspace3(x+2)$
+    b. $\enspace3(x+2)=6$
+    c. $\enspace5-3x-2$
+    d. $\enspace3x+2=6$
+    e. $\enspace-x+4=11$
+    f. $\enspace-x+(4-11)-2x$
+
+2.
+
+3.
+
+### Answers
+
+#### Level 1
+
+1. State whether each of the following is an equation or an expression:
+    a. expression
+    b. equation
+    c. expression
+    d. equation
+    e. equation
+    f. solution
+
+2.
+
+3.
+
+#### Level 2
+
+#### Level 3
+
+# Lesson 2
+
+::: {.syllabus}
+**Syllabus**
+
+Syllabus here
+:::
+
+::: {.definition}
+**Definition**
+
+Definition here
+:::
+
+::: {.rule}
+**Rule**
+
+Rule here
+:::
+
+::: {.important}
+**Important**
+
+Important here
+:::
+
+::: {.proof}
+**Proof**
+
+Proof here
+:::
+
+::: {.extension}
+**Extension**
+
+Extension here
+:::
+
+::: {.note}
+**Note**
+
+Note here
+:::
