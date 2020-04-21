@@ -18,7 +18,7 @@ This could be used for indicating a syllabus dot point, an example, a reminder, 
 
 $$\begin{aligned}
 ax^2+bx+c&=0\\
-x^2+\frac{b}{a}x+\frac{c}{a}&=0\\
+\color{rgb(221, 72, 30)}{x^2}+\frac{b}{a}x+\frac{c}{a}&=0\\
 x^2+\frac{b}{a}x&=-\frac{c}{a}\\
 x^2+\frac{b}{a}x+\left(\frac{b}{2a}\right)^2&=\left(\frac{b}{2a}\right)^2-\frac{c}{a}\\
 \left(x+\frac{b}{2a}\right)^2&=\frac{b^2-4ac}{4a^2}\\

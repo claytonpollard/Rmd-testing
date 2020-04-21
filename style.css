@@ -7,7 +7,7 @@
   padding: 4px;
   padding-left: 8px;
   margin: 10px;
-  background: gba(221, 72, 30);
+  background: rgba(221, 72, 30, 0.1);
 }
 
 .definition {
