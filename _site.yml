@@ -4,6 +4,8 @@ navbar:
   left:
     - text: "Example"
       href: example.html
+    - text: "Example 2"
+      href: example_alt.html
 output_dir: "docs"
 output:
   html_document:
