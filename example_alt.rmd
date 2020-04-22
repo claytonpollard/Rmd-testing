@@ -6,7 +6,7 @@ output:
     toc_float: true
 ---
 
-# Lesson 1 [![](pres.png)](example_pres.html) {.tabset .tabset-fade .tabset-pills}
+# Lesson 1 [![](pres.png)](example_pres.html){target="blank"} [![](pres.png)](slidify/index.html){target="blank"} {.tabset .tabset-fade .tabset-pills}
 
 ## Content
 
